@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+.hero{
+    width: 100%;
+    min-height: 80vh;
+    background-color: rgb(70, 70, 150);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.hero__container{
+    width: 90%;
+    position: absolute;
+    min-height: 90%;
+    // background-color: blue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden
+}
+.hero__text{
+    width: 50%;
+    height: 100%;
+    // background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+}
+.hero__text h1 {
+    font-size: 55px;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+}
+
+.hero__text h1::before {
+    content: '';
+    width: 0%;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: all ease-in-out 0.25s;
+}
+
+.hero__text h1:hover::before {
+    width: 100%;
+    transition: all ease-in-out 0.25s;
+}
+
+.hero__text span{
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+.hero__img{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.getbook{
+    width: 170px;
+    height: 45px;
+    background-color: rgb(70, 70, 175);
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: all ease-in-out 0.1s;
+}
+.HeroArow{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    width: 200px;
+    height: 200px;
+    padding: 0px 10px;
+}
+.hero__img img {
+    width: 65%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 2;
+}
+.HeroArow.active {
+    animation-name: arr;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes arr {
+    50% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(90deg);
+    }
+}
+.getbook:active{
+    transform: scale(0.9);
+    transition: all ease-in-out 0.1s;
+}
+@media screen and (max-width:840px) {
+    .hero__container{
+        display: flex;
+        flex-direction: column;
+    }
+    .HeroArow{
+        width: 100px;
+        height: 100px;
+        margin: 40px 0px 0px 20px;
+    }
+    .hero__text h1{
+        font-size: 45px;
+        color: #fff;
+        font-family: 'Oswald', sans-serif;
+    }
+    .hero__text span{
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:576px) {
+    .hero__text h1{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:400px) {
+    .HeroArow{
+        width: 80px;
+        height: 80px;
+    }
+}
+@media screen and (max-width:500px) {
+    .getbook{
+        width: 150px;
+        height: 35px;
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:1100px) {
+    .hero__img img {
+        width: 75%;
+        height: 90%;
+    }
+}
+@media screen and (max-width:925px) {
+    .hero__img img {
+        width: 85%;
+        height: 95%;
+    }
+}
